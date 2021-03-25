@@ -1,9 +1,9 @@
 # TimeCapsule
 Ethereum Time Capsules
 
-Ropsten contract address:0x45681A97c22c661C4234490ED7d9F84348b39dD5
+Ropsten contract address:0xa90681A17030DC91E4402A9815CA0Ae49911F76e
 
-onedapp: https://oneclickdapp.com/pigment-parlor
+onedapp: https://oneclickdapp.com/vienna-camera
 
 ## Process
 
@@ -13,8 +13,7 @@ onedapp: https://oneclickdapp.com/pigment-parlor
 
  **1. Send a message**
  
- DataHash=Keccak256Hash(Plaintext)
- Hash  = Keccak256Hash(DataHash + user's address)
+ Hash  = Keccak256Hash(Plaintext + user's address)
  signature = Sign(Hash)
  AESkey = signature.r
  ciphertext = AesEncryptCBC(Plaintext,AESkey)
