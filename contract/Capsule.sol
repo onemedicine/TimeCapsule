@@ -34,7 +34,7 @@ contract Capsule {
     
 
     function pushMessage( string memory ciphertext, uint256 time, bytes32 hash) public {
-        require(time < (block.timestamp + 5 minutes),"Too close");
+        require(time > (block.timestamp + 5 minutes),"Too close");
         
         
         messageInfo memory m_ ;
@@ -42,7 +42,7 @@ contract Capsule {
         bytes32 timeHash_ = sha256(abi.encodePacked(block.timestamp, msg.sender));
         bytes32 id_ = keccak256(abi.encodePacked(hash, timeHash_));
         
-        require(_mess[id_].CreateDate != 0,"Existed");
+        require(_mess[id_].CreateDate == 0,"Existed");
         
         m_.Creator = msg.sender;
         m_.CreateDate = block.timestamp;
@@ -64,10 +64,10 @@ contract Capsule {
     }
     
     function UnblockMessage(uint256 index, string memory plaintext) public{
-        require(_mess[_index[msg.sender][index]].UnblockDate > block.timestamp,"Not yet");
+        require(_mess[_index[msg.sender][index]].UnblockDate < block.timestamp,"Not yet");
         
         bytes32 hash = keccak256(abi.encodePacked(plaintext,msg.sender));
-        require(_mess[_index[msg.sender][index]].Hash != hash, "Mismatch");
+        require(_mess[_index[msg.sender][index]].Hash == hash, "Mismatch");
         
         
         _mess[_index[msg.sender][index]].Plaintext = plaintext;
