@@ -12,6 +12,7 @@ onedapp: https://oneclickdapp.com/pigment-parlor
  
 
  **1. Send a message**
+ 
  DataHash=Keccak256Hash(Plaintext)
  Hash  = Keccak256Hash(DataHash + user's address)
  signature = Sign(Hash)
@@ -36,6 +37,7 @@ onedapp: https://oneclickdapp.com/pigment-parlor
  
 
  **3. View message**
+ 
   Plaintext  = CapsuleContract.getMessageByIndex()
  or  CapsuleContract.getMessageByHash()
  
