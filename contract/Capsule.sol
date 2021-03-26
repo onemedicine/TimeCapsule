@@ -65,6 +65,7 @@ contract Capsule {
     
     function UnblockMessage(uint256 index, string memory plaintext) public{
         require(_mess[_index[msg.sender][index]].UnblockDate < block.timestamp,"Not yet");
+        require(_mess[_index[msg.sender][index]].Status == false, "Already");
         
         bytes32 hash = keccak256(abi.encodePacked(plaintext,msg.sender));
         require(_mess[_index[msg.sender][index]].Hash == hash, "Mismatch");
