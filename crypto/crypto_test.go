@@ -23,13 +23,13 @@ func TestCrypto(t *testing.T)  {
 	}
 
 	origData := []byte("Genesis Message") 
-	dataHash := crypto.Keccak256Hash(origData).Bytes()
-	hash := crypto.Keccak256Hash(dataHash, hexutils.HexToBytes("96216849c49358B10257cb55b28eA603c874b05E"))
-	log.Println(hash.Hex()) // 0x4dc1102a2a66f9b1b3d07da46f1eaf617a79216f700458935989e3a7a11213d2
+// 	dataHash := crypto.Keccak256Hash(origData).Bytes()
+// 	hash := crypto.Keccak256Hash(dataHash, hexutils.HexToBytes("96216849c49358B10257cb55b28eA603c874b05E"))
+// 	log.Println(hash.Hex()) // 0x4dc1102a2a66f9b1b3d07da46f1eaf617a79216f700458935989e3a7a11213d2
 
   // bytes32 hash = keccak256(abi.encodePacked(plaintext,msg.sender));
-	// hash := crypto.Keccak256Hash(origData, hexutils.HexToBytes("96216849c49358B10257cb55b28eA603c874b05E"))
-	// log.Println(hash.Hex()) // 0x5b053cba2bf2de145ec144ee7629418c8fe409a9b482a465048176dda42e5815
+	hash := crypto.Keccak256Hash(origData, hexutils.HexToBytes("96216849c49358B10257cb55b28eA603c874b05E"))
+	log.Println(hash.Hex()) // 0x5b053cba2bf2de145ec144ee7629418c8fe409a9b482a465048176dda42e5815
 
 	signature, err := crypto.Sign(hash.Bytes(), privateKey)
 	if err != nil {
