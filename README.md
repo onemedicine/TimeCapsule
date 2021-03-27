@@ -1,6 +1,9 @@
 # TimeCapsule
 Ethereum Time Capsules
 
+Provides an idea. In order to avoid the plaintext can be calculated in advance through other means, the user should decide by himself, because it is associated with the user’s signature, and only the user can unblock it.
+
+
 Ropsten contract address:0xa90681A17030DC91E4402A9815CA0Ae49911F76e
 
 onedapp: https://oneclickdapp.com/vienna-camera
