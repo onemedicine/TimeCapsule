@@ -45,7 +45,11 @@ Video: https://youtu.be/W173ZWk-A_c
  
 ## Interface
  pushMessage(string memory ciphertext, uint256 time, bytes32 hash)
+ 
  UnblockMessage(uint256 index, string memory plaintext)
+ 
  getMessageByHash(address blogger, uint256 index)
+ 
  getMessageByIndex(bytes32 id)
+ 
  version 
